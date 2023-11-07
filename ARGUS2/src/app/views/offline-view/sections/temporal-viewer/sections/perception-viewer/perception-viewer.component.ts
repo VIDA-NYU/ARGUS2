@@ -44,7 +44,13 @@ export class PerceptionViewerComponent implements AfterViewInit, OnChanges, OnIn
 
     if( 'streamData' in changes && !changes['streamData'].firstChange ){
       if( changes['streamData'].currentValue ){
-        this.perceptionViewerController.update_dataset( this.streamName, changes['streamData'].currentValue );
+        this.perceptionViewerController.update_dataset( this.streamName, changes['streamData'].currentValue, [] );
+      }
+    }
+
+    if( 'selectedTimestamp' in changes && !changes['selectedTimestamp'].firstChange ){
+      if( changes['selectedTimestamp'].currentValue ){
+        this.perceptionViewerController.highlight_timestamp( changes['selectedTimestamp'].currentValue['detic:image:misc:for3d'] );
       }
     }
 

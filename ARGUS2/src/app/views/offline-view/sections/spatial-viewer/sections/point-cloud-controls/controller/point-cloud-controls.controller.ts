@@ -8,9 +8,9 @@ export class PointCloudControlsController{
     constructor( public events: { [eventName: string]: EventEmitter<any>  }){}
 
     public on_style_change( objectName: string, styleName: string, value: number ): void{
-
+        
         this.events['onstylechange'].emit( {
-            objectName, styleName, value
+            objectName, styleName, value: value/10000
         });
         
     }

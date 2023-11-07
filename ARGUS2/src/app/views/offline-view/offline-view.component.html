@@ -4,7 +4,6 @@
 
         <div style="width: 100%; height: 100%; position: relative;">
 
-            <!--  -->
             <div style="width: 100%; height: 100%; top: 0px; left: 0px; position: absolute;">
                 <div style="width: 100%; height: 100%; display: flex;">
                     <app-spatial-viewer 
@@ -15,7 +14,7 @@
                 </div>
             </div>
 
-            <div style="width: 100px; height: 400px; top: 0px; left: 0px; position: absolute;" >
+            <div style="width: 100px; height: 400px; top: 0px; left: 0px; position: absolute;"  >
                 <div style="width: 100%; height: 100%; display: flex;">
                     <app-query-bar
                         (annotationbuttonclicked)="this.offlineViewController.on_annotation_button_click()"
@@ -28,10 +27,7 @@
 
     </div>
 
-    <!-- <mat-divider [vertical]="true"></mat-divider> -->
-
     <div class="component-container-vertical">
-
 
         <div class="component-container-horizontal-height-param" style="--height: 30%;">
             <app-media-viewer 
@@ -40,8 +36,6 @@
                 [videos]="(this.offlineViewController.loadedVideos$ | async)!">
             </app-media-viewer>
         </div>
-
-        <!-- <mat-divider></mat-divider> -->
 
         <div class="component-container-horizontal">
             <app-temporal-viewer

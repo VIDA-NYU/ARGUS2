@@ -34,6 +34,7 @@ export class MemoryViewerController {
         this.labels = Object.keys( chartData );
         this.indexedLabels = chartData;
 
+        this.change_label( this.labels[0] );
     }
 
     public update_render( data: { [id: number] : { value: string | number, timestamp: number }[] }, timestamp: number | null ): void {        

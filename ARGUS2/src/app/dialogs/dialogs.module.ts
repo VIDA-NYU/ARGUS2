@@ -7,7 +7,7 @@ import { MaterialModule } from "../material/material.module";
 import { ResultCardComponent } from './session-picker-dialog/sections/results-list/result-card/result-card.component';
 import { TemplatesModule } from "../templates/templates.module";
 import { CommonModule } from "@angular/common";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { SessionAnnotationDialogComponent } from './session-annotation-dialog/session-annotation-dialog.component';
 
 @NgModule({

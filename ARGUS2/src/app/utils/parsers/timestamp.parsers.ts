@@ -8,6 +8,7 @@ export class TimestampParsers {
                 return TimestampParsers.static_index_eye_point_cloud( stream );
             case 'hand':
                 return TimestampParsers.static_index_hand_point_cloud( stream );
+            // case ''
         }
 
     }
@@ -48,7 +49,27 @@ export class TimestampParsers {
                 return TimestampParsers.parse_detic_image_misc_output( stream, firstEntry );
             case 'reasoning:check_status':
                 return TimestampParsers.parse_reasoning_output( stream, firstEntry );
+            case 'reasoning:check_status_db':
+                return TimestampParsers.parse_reasoning_smooth_output( stream, firstEntry );
         }
+
+    }
+
+    private static parse_reasoning_smooth_output( stream: any, firstEntry: number ): any{
+
+        const normalizedStream: any[] = [];
+        for( let i = 0; i < stream.length; i++ ){
+
+            if( 'values' in stream[i] ){
+                continue;
+            }
+            
+            const normalizedTimestamp: number = stream[i].timestamp.split('-')[0] - firstEntry;
+            normalizedStream.push({...stream[i], timestamp: normalizedTimestamp })
+
+        }
+
+        return normalizedStream;
 
     }
 

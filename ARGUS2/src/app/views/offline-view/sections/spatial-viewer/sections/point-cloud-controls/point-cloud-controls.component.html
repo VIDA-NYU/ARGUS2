@@ -46,7 +46,7 @@
 
 
                     <div class="component-container-horizontal-height-param" style="--height: 50px;">
-                        <mat-slider [min]="0" [max]="0.5" [step]="0.005">
+                        <mat-slider [min]="0" [max]="1000" [step]="1">
                             <input matSliderThumb
                                 (valueChange)="this.pointCloudControlsController.on_style_change( pointCloud, 'size', $event )"> 
                         </mat-slider>

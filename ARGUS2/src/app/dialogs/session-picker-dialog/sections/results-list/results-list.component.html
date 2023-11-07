@@ -3,7 +3,7 @@
 
         <div style="display: flex; flex-direction: column;">
 
-            <div *ngFor="let session of this.sessions" class="component-container-horizontal-height-param" style="--height: 300px" >
+            <div *ngFor="let session of this.sessions" class="component-container-horizontal-height-param" style="--height: 200px" >
                 <app-result-card
                     (onsessionloadclick)="this.sessionSelected.emit($event)"
                     [session]="session">

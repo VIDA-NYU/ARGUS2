@@ -10,18 +10,18 @@ export class ModelViewerController {
 
     public initialize_component( containerRef: HTMLDivElement ): void {
 
-        const callbacks: { [callbackName: string]: any } = {
-            'mouseover': (index: number | null) => { this.cell_hovered(index) },
-            'mouseout': (index: number | null) => { this.cell_hovered(index) }
-        }
+        // const callbacks: { [callbackName: string]: any } = {
+        //     'mouseover': (index: number | null) => { this.cell_hovered(index) },
+        //     'mouseout': (index: number | null) => { this.cell_hovered(index) }
+        // }
 
-        this.modelViewer = new ModelViewer( containerRef, callbacks );
+        // this.modelViewer = new ModelViewer( containerRef, callbacks );
     }
     
     public update( streamName: string, streamData: any ): void {
 
 
-        console.log('UPDATING');
+        // console.log('UPDATING');
         // console.log(streamData);
 
 
@@ -41,7 +41,7 @@ export class ModelViewerController {
     }
 
     public cell_hovered( index: number | null ): void {
-        this.modelViewer.update( this.currentChartData, index, [0, 180000] )
+        // this.modelViewer.update( this.currentChartData, index, [0, 180000] )
     }
     
     

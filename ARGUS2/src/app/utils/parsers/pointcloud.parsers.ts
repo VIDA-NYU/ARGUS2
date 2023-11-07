@@ -11,7 +11,30 @@ export class PointCloudParsers {
                 return PointCloudParsers.parse_hand_point_cloud( stream );
             case 'detic:memory':
                 return PointCloudParsers.parse_memory_point_cloud( stream );
+            case 'reasoning:check_status':
+                return PointCloudParsers.parse_reasoning_point_cloud( stream );
           }
+    }
+
+    private static parse_reasoning_point_cloud( stream: any ): { [task: number]: { positions: number[][], colors: number[][], normals: number[][], meta: any[] } } {
+        
+        const taskIDs: { [task: number]: { positions: number[][], colors: number[][], normals: number[][], meta: any[] } } = {};
+        stream.forEach( (entry: any) => {
+
+            entry.active_tasks.forEach( (task: any) => {
+
+                if( !(task.task_id in taskIDs) ){
+                    taskIDs[task.task_id] = { positions: [], colors: [], normals: [], meta: [] };
+                }
+
+                task.objects.forEach( (object: any) => {
+                    taskIDs[task.task_id].positions.push(object.pos);
+                    taskIDs[task.task_id].meta.push({timestamp: entry.timestamp});
+                })
+            })
+        });
+
+        return taskIDs;
     }
 
     private static parse_eye_point_cloud( stream: any ): any {
@@ -32,6 +55,8 @@ export class PointCloudParsers {
     }
 
     private static parse_hand_point_cloud( stream: any ): any {
+
+        console.log( 'HAND: ', stream );
 
         return { positions: [], colors: [], normals: [], meta: [] };
     }

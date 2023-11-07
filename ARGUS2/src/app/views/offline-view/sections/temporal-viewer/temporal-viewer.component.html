@@ -21,7 +21,7 @@
             <app-reasoning-viewer 
                 (timestampselected)="this.timestampSelected.emit($event)"
                 [selectedtimestamp]="this.selectedTimestamp"
-                [streamdata]="this.streams | streamSetToStream: 'reasoning:check_status'">
+                [streamdata]="this.streams | streamSetToStream: 'reasoning:check_status_db'">
             </app-reasoning-viewer>
         </app-component-container-template>
 

@@ -12,7 +12,8 @@ import { ReasoningViewerController } from './controller/reasoning-viewer.control
 export class ReasoningViewerComponent implements AfterViewInit, OnChanges, OnInit {
 
   // consts
-  public streamName: string = 'reasoning:check_status';
+  // public streamName: string = 'reasoning:check_status';
+  public streamName: string = 'reasoning:check_status_db';
 
   // controller
   public reasoningViewerController!: ReasoningViewerController;

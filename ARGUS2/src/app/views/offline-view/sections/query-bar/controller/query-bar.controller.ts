@@ -9,7 +9,6 @@ export class QueryBarController {
     }
 
     public on_annotation_button_click(): void {
-        console.log('Emitting');
         this.events['annotationbuttonclicked'].emit();
     }
 

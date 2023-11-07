@@ -23,7 +23,7 @@
     "@ngrx/effects": "^15.4.0",
     "@ngrx/store": "^15.4.0",
     "d3-binarytree": "^1.0.2",
-    "egocloud": "file:../../egocloud/egocloud/package/egocloud-1.0.0.tgz",
+    "egocloud": "file:../../egocloud/package/egocloud-1.0.0.tgz",
     "modelviewer": "file:../../ModelViewer/package/modelviewer-1.0.0.tgz",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

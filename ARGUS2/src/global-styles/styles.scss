@@ -7,3 +7,16 @@ form { width: 100%; height: 100%;}
 h1, h2, h4 {
     margin: 0px 0px 0px 0px !important;
 }
+
+
+@media (max-width: 3500px) {
+    h1, h2, h4 {
+        font-size: medium !important;
+    }
+}
+
+@media (max-width: 1600px) {
+    h1, h2, h4 {
+        font-size: 12px !important;
+    }
+}

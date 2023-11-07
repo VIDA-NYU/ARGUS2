@@ -65,13 +65,23 @@ export class SpatialViewerController {
                     dataset.add_point_cloud( name, availableStreams[name].positions, [], availableStreams[name].colors, [], false, true  );
                 } 
                 
-                else if( name === 'detic:memory' || name === 'reasoning:check_status' || name === 'detic:image:misc:for3d' ){
+                else if( name === 'detic:memory' || name === 'reasoning:check_status_db' || name === 'detic:image:misc:for3d' ){
 
                     // const memoryPointClouds: { [name: string]: { positions: number[][], colors: number[][], normals: number[][], meta: any[] } } = PointCloudParsers.parse_stream_into_pointcloud(name, streams[name]);
                     // Object.keys( memoryPointClouds ).forEach( ( label: string ) => {
                     //     availableStreams[label] = memoryPointClouds[label];                       
                     //     dataset.add_point_cloud( label, memoryPointClouds[label].positions, memoryPointClouds[label].normals, memoryPointClouds[label].colors, memoryPointClouds[label].meta, false, true, false );
                     // });
+
+                } else if( name === 'reasoning:check_status'){
+
+                    // const reasoningPointClouds: { [recipe: string]: }
+                    const reasoningPointClouds: { [name: string]: { positions: number[][], colors: number[][], normals: number[][], meta: any[] } } = PointCloudParsers.parse_stream_into_pointcloud(name, streams[name]);
+                   
+                    Object.keys( reasoningPointClouds ).forEach( ( label: string ) => {
+                        availableStreams[`task-${label}`] = reasoningPointClouds[label];                       
+                        dataset.add_point_cloud( `task-${label}`, reasoningPointClouds[label].positions, reasoningPointClouds[label].normals, reasoningPointClouds[label].colors, reasoningPointClouds[label].meta, false, false );
+                    });
 
                 } else { 
 

@@ -28,11 +28,11 @@ export class ModelViewerComponent implements AfterViewInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
 
-    if( 'stream' in changes && !changes['stream'].firstChange ){
-      if(changes['stream'].currentValue){
-        // this.modelViewerController.update( this.streamName, changes['stream'].currentValue );
-      }
-    }
+    // if( 'stream' in changes && !changes['stream'].firstChange ){
+    //   // if(changes['stream'].currentValue){
+    //   //   // this.modelViewerController.update( this.streamName, changes['stream'].currentValue );
+    //   // }
+    // }
 
   }
 
