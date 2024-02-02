@@ -5,7 +5,7 @@ export const STREAMNAMES: string[] = [
     'detic:memory', 
     'detic:image:misc:for3d', 
     'reasoning:check_status',
-    'reasoning:check_status_db'
+    // 'reasoning:check_status_db'
 ];
 export const VIDEONAMES: string[] = [ 'main', 'depthlt', 'glf', 'gll', 'grf', 'grr' ];
 
